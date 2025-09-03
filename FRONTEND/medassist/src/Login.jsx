@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../src/assets/css/Login.css"; // ⭐ make sure path is correct
 import { Link } from "react-router-dom";
+import axios from "axios"; // Import axios if you plan to make API calls
 
 
 const Auth = () => {
@@ -26,7 +27,8 @@ const Auth = () => {
 
   // ✅ Handle input change for Register
   const handleRegisterChange = (e) => {
-    setRegisterValues({ ...registerValues, [e.target.name]: e.target.value });
+    e.preventDefault();
+    setRegisterValues({ ...registerValues, [e.target.name]: e.target.value })
   };
 
   // ✅ Submit handlers
@@ -40,6 +42,13 @@ const Auth = () => {
     e.preventDefault();
     console.log("Register Submitted:", registerValues);
     // 👉 API call or logic here
+    axios.post('http://localhost:3000/register', registerValues)
+    .then(response => {
+      console.log("Registration successful:", response.data);
+    })
+    .catch(error =>{
+      console.error("Error during registration:", error);
+    })
   };
 
   return (
@@ -117,6 +126,7 @@ const Auth = () => {
                   onChange={handleRegisterChange}
                   required
                 />
+                
                 <i className="fa fa-lock"></i>
               </div>
               <button type="submit" className="Button">Register</button>
