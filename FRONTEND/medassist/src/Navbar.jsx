@@ -13,15 +13,15 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="box2">
-                <ul>
+                <ul className="nav-list">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About Us</Link></li>
                     <li><Link to="/service">Services</Link></li>
-                    <li><a href="#">Doctors</a></li>
-                    <li><a href="#">Departments</a></li>
+                    <li><Link to="/doctors">Doctors</Link></li>
+                    <li><Link to="/department">Departments</Link></li>
                 </ul>
             </div>
-            <a href="#" className="btn">MediBot<span><i></i></span></a>
+            <a href="#" className="btn-nav">MediBot<span><i></i></span></a>
         </div>
     );
 };

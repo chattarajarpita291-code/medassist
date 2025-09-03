@@ -19,7 +19,7 @@ function Service() {
                 <div className="s1"><h2>Women's Healthcare</h2>
                     <p>Women's healthcare refers to medical services and treatments specifically designed to address the unique health needs of women throughout their lives.</p></div>
             </div>
-            <div className="serv2"><img src={serve} alt="bg" /></div>
+            <div className="serv2"><img src={serve} alt="bg" className="service-image" /></div>
             <div className="serv1">
                 <div className="s1"><h2>Dermatology</h2>
                     <p>Dermatology is the branch of medicine that focuses on diagnosing and treating skin, hair, and nail conditions.</p></div>

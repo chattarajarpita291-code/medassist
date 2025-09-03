@@ -5,13 +5,47 @@
   align-items: center;
   min-height: 100vh;
   background: #f0f4f9;
+  flex-direction: column;
+}
+#skip {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    border: 1px solid #e0e0e0;
+}
+
+#skip:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    color: #007bff;
+}
+
+#skip i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+#skip:hover i {
+    transform: translateX(-3px);
 }
 
 /* Main container */
 .auth-container {
   position: relative;
   width: 700px;
-  height: 600px;
+  height: 500px;
   background: #fff;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
@@ -92,7 +126,7 @@
 
 /* Buttons */
 .Button {
-padding: 18px 25px;
+    padding: 10px 20px ;
     border: 2px solid #fff;
     background: #6996ee;
     color: #fff;
@@ -102,6 +136,9 @@ padding: 18px 25px;
     transition: 0.3s ease;
     left: 3%;
     top: 4%;
+    border-radius: 5px;
+    width: 200px;
+   
 }
 .Button:hover {
   background: #fff;

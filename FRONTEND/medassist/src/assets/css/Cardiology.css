@@ -1,0 +1,223 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.anchor{
+text-decoration:none;
+font-size:18px;
+margin-top:25px;
+margin-left:15px;
+}
+.anchor:hover{
+color:darkblue;
+}
+.medica{
+    height:100%;
+    width:100%;
+}
+.header-medic {
+     position: relative;
+  height: 120px;
+  width:100%;
+  overflow: hidden;
+ 
+}
+.header-image{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.header-text{
+     background-color: white;
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 7px;
+  width: 450px;
+  height:60px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  justify-content: center;
+  align-items: center;
+  font-family:'Times New Roman', Times, serif;
+}
+
+
+.gradient{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(51, 50, 50, 0.8) 100%);
+  pointer-events: none;
+}
+.hero-medic{
+    height:300px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(135deg,rgb(42, 248, 248),rgb(153, 214, 238),rgb(224, 237, 248),rgb(208, 242, 245),white);
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.hero-medic-text{
+    height:250px;
+    width:350px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+}
+.hero-medic-text h2{
+    font-size: 40px;
+    font-weight: 800;
+    color:rgb(2, 2, 87);
+    font-family:'Times New Roman', Times, serif;
+}
+.hero-medic-text p{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(15, 15, 15);
+}
+.hero-image-medic{
+    height: 260px;
+    width: 270px;
+    object-fit: cover;
+    background-color: aliceblue;
+}
+.medic-service1, .medic-service2{
+    height:250px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+ .medic-service-text{
+    font-size:25px;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top:15px;
+    font-family:'Times New Roman', Times, serif;
+}
+.medicservcards{
+    height:100%;
+    width:300px;
+    display: flex;
+    align-items: center;
+    transition:0.5s ease;
+    flex-direction: column;
+    border-radius:10px;
+}
+.medicservcards:hover {
+    transform: scale(1.1);
+    cursor:pointer;
+}
+.medicservcards img{
+    width:100%;
+    height:200px;
+    object-fit: cover;
+}
+.medicservcards h3{
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+   
+}
+.wel-text{
+    color:black;
+    font-family:'Times New Roman', Times, serif;
+    font-size:25px;
+    display: flex;
+    align-items: center;
+    width:100%;
+    justify-content: center;
+    background-color: rgb(235, 232, 232);
+    height:40px;
+    font-weight: 800;
+}
+.wel-sec{
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height:200px;
+    padding-top:15px;
+}
+.wel-card{
+    height:100%;
+    width:250px;
+}
+.wel-card h3{
+    color:rgb(1, 46, 46);
+    font-size:27px;
+}
+
+.wel-card p{
+    font-size:17px;
+    margin-top:15px;
+}
+.doc-sec{
+    height:350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.imgdoc{
+    height:300px;
+    width:300px;
+    object-fit: cover;
+}
+.doc-detail{
+    height:300px;
+    width:600px;
+}
+.doc-detail h2{
+    font-size:30px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.doc-detail p{
+    margin-top:5px;
+}
+.patient,.news{
+    font-size:25px;
+    font-weight: 800;
+    height:50px;
+    width:100%;
+    background-color:rgb(231, 231, 231); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rev-sec,.news-sec{
+    height:80px;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+     background-color:rgb(231, 231, 231); 
+     gap:40px;
+}
+.rev-card,.news-card{
+    height:60px;
+    width:300px;
+    font-size: 21px;
+    color:rgb(1, 46, 46);
+    font-style: italic;
+}

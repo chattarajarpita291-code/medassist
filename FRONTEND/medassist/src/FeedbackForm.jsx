@@ -50,7 +50,7 @@ function FeedbackForm() {
           <textarea name="description" value={formData.description} onChange={handleChange} required />
         </div>
 
-        <button type="submit">Send Feedback</button>
+        <button className="feed-btn" type="submit">Send Feedback</button>
       </form>
     </div>
   );

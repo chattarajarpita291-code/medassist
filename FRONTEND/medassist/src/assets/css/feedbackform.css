@@ -6,7 +6,7 @@
     justify-content: space-evenly;
     flex-direction: column;
 }
-button{
+.feed-btn{
     background-color: rgb(136, 231, 255);
     height:30px;
     width:150px;

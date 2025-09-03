@@ -1,0 +1,116 @@
+.doctor-page{
+    height:100%;
+    width:100%;
+}
+.doctor-header{
+    height:250px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-image: linear-gradient(45deg,rgb(0, 0, 87),rgb(42, 248, 248),rgb(153, 214, 238),rgb(224, 237, 248),rgb(208, 242, 245));
+}
+.doctor-head-img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    overflow: hidden;
+    opacity:0.3;
+}
+.doctor-head-text{
+    font-size:3rem;
+    font-weight:bold;
+    color:rgb(1, 1, 37);
+    text-align:center;
+    font-family: 'Times New Roman', Times, serif;
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform:translate(-50%,-50%);
+   letter-spacing: 1px;
+}
+.doctor-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+
+.doctor-card {
+    background: whitesmoke;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 336px; /* total height reduced */
+}
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 8px 8px rgba(1, 82, 102, 0.1);
+    cursor:pointer;
+}
+.doctor-card-img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+.doctor-card-name{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: rgb(1, 1, 37);
+    padding-left:10px;
+    text-align: center;
+}
+.doctor-card-department{
+    font-size: 1.4rem;
+    color: rgb(2, 104, 32);
+    padding-bottom: 15px;
+}
+.doctor-card-rating{
+    height: 30px;
+    width:100px;
+    text-align: center;
+    background-color: rgb(1, 1, 56);
+    color:white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    
+}
+.doc-dep{
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width:100%;
+}
+.doctor-card-study,.doctor-card-location{
+    font-size: 1.2rem;
+    color: rgb(1, 1, 37);
+    padding: 5px 10px;
+}
+.doctor-card-button{
+    height:40px;
+    width:100%;
+    background-color: aliceblue;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:0.5s ease;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.doctor-card-button:hover{
+    background-color: rgb(3, 206, 206);
+    color: white;
+    cursor: pointer;
+}
