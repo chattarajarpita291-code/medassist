@@ -1,4 +1,4 @@
-# Getting Started with  React App
+# Getting Started with created React App
 
 This project was  with [Create React App](https://github.com/facebook/create-react-app).
 

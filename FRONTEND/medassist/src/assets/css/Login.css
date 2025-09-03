@@ -7,6 +7,7 @@
   background: #f0f4f9;
   flex-direction: column;
 }
+
 #skip {
     position: absolute;
     top: 20px;
@@ -39,7 +40,20 @@
 
 #skip:hover i {
     transform: translateX(-3px);
+
 }
+
+
+#skip-first:hover,
+#skip-secound:hover,
+#skip:hover {
+  background: linear-gradient(90deg, #3db6e7 60%, #6996ee 100%);
+  /* background: #fff; */
+  color: #ebebed;
+  box-shadow: 0 4px 16px rgba(61, 182, 231, 0.18);
+  
+}
+
 
 /* Main container */
 .auth-container {
@@ -136,7 +150,7 @@
     transition: 0.3s ease;
     left: 3%;
     top: 4%;
-    border-radius: 5px;
+    border-radius: 20px;
     width: 200px;
    
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../src/assets/css/Login.css"; // ⭐ make sure path is correct
 import { Link } from "react-router-dom";
 
+
 const Auth = () => {
   const [isRegister, setIsRegister] = useState(false);
 
@@ -46,6 +47,8 @@ const Auth = () => {
       <Link to="/" id="skip"><i  class="fas fa-arrow-left"></i>Skip to Home Page</Link>
       <div className={`auth-container ${isRegister ? "register-mode" : ""}`}>
         
+
+
 
         {/* Forms Section */}
         <div className="forms-container">
@@ -119,6 +122,7 @@ const Auth = () => {
               <button type="submit" className="Button">Register</button>
             </form>
           )}
+
         </div>
 
         {/* Overlay Section */}
