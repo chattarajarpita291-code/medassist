@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import "../src/assets/css/Login.css"; // ⭐ make sure path is correct
 import { Link } from "react-router-dom";
 import axios from "axios"; // Import axios if you plan to make API calls
-
+import { PiEyeDuotone } from "react-icons/pi";
+import { PiEyeSlashDuotone } from "react-icons/pi";
+import { VscEye } from "react-icons/vsc";
+import { TbEyeClosed } from "react-icons/tb";
 
 const Auth = () => {
   const [isRegister, setIsRegister] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
 
   // ✅ State for Login
   const [loginValues, setLoginValues] = useState({
@@ -50,6 +55,12 @@ const Auth = () => {
       console.error("Error during registration:", error);
     })
   };
+function togglePasswordVisibility() {
+  const open = document.getElementById("eye_open");
+  if (open){
+    open.classList.toggle(<PiEyeSlashDuotone />);
+  }
+}
 
   return (
     <div className="wrapper">
@@ -104,7 +115,7 @@ const Auth = () => {
                   onChange={handleRegisterChange}
                   required
                 />
-                <i className="fa fa-user"></i>
+                <i className="fa fa-user icon"></i>
               </div>
               <div className="input-box">
                 <input
@@ -115,19 +126,31 @@ const Auth = () => {
                   onChange={handleRegisterChange}
                   required
                 />
-                <i className="fa fa-envelope"></i>
+                <i className="fa fa-envelope icon"></i>
               </div>
               <div className="input-box">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
                   value={registerValues.password}
                   onChange={handleRegisterChange}
                   required
                 />
-                
-                <i className="fa fa-lock"></i>
+                {showPassword ? (
+    <VscEye
+      id="eye_icon"
+      
+      onClick={() => setShowPassword(false)}   // 👈 hide password
+    />
+  ) : (
+    <TbEyeClosed
+      id="eye_icon"
+      
+      onClick={() => setShowPassword(true)}    // 👈 show password
+    />
+  )}
+               
               </div>
               <button type="submit" className="Button">Register</button>
             </form>
