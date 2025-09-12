@@ -6,6 +6,7 @@ import { PiEyeDuotone } from "react-icons/pi";
 import { PiEyeSlashDuotone } from "react-icons/pi";
 import { VscEye } from "react-icons/vsc";
 import { TbEyeClosed } from "react-icons/tb";
+import App from './App.jsx';
 
 const Auth = () => {
   const [isRegister, setIsRegister] = useState(false);
@@ -64,7 +65,7 @@ function togglePasswordVisibility() {
 
   return (
     <div className="wrapper">
-      <Link to="/" id="skip"><i  class="fas fa-arrow-left"></i>Skip to Home Page</Link>
+      <Link to="/App" id="skip"><i  class="fas fa-arrow-left"></i>Skip to Home Page</Link>
       <div className={`auth-container ${isRegister ? "register-mode" : ""}`}>
         
 
