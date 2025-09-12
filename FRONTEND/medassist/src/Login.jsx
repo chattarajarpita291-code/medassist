@@ -7,6 +7,7 @@ import { PiEyeSlashDuotone } from "react-icons/pi";
 import { VscEye } from "react-icons/vsc";
 import { TbEyeClosed } from "react-icons/tb";
 
+
 const Auth = () => {
   const [isRegister, setIsRegister] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -14,7 +15,7 @@ const Auth = () => {
 
   // ✅ State for Login
   const [loginValues, setLoginValues] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -40,7 +41,24 @@ const Auth = () => {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     console.log("Login Submitted:", loginValues);
-    // 👉 API call or logic here
+    axios.post('http://localhost:3000/login', {
+  email: loginValues.username, // assuming you typed email here
+  password: loginValues.password
+})
+.then(response => {
+  if (response.data.Status === "Success") {
+    alert("Login successful!");
+    // 👉 Optionally store token or redirect
+    window.location.href = "/"; // redirect to home
+  } else {
+    alert(response.data.Error);
+  }
+})
+.catch(error => {
+  console.error("Login error:", error);
+  alert("Login failed. Check console.");
+});
+
   };
 
   const handleRegisterSubmit = (e) => {
@@ -64,7 +82,6 @@ function togglePasswordVisibility() {
 
   return (
     <div className="wrapper">
-      <Link to="/" id="skip"><i  class="fas fa-arrow-left"></i>Skip to Home Page</Link>
       <div className={`auth-container ${isRegister ? "register-mode" : ""}`}>
         
 
@@ -79,8 +96,8 @@ function togglePasswordVisibility() {
               <div className="input-box">
                 <input
                   type="text"
-                  name="username"
-                  placeholder="Username"
+                  name="email"
+                  placeholder="Email"
                   value={loginValues.username}
                   onChange={handleLoginChange}
                   required
