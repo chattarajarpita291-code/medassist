@@ -15,12 +15,20 @@ import Neurology from "./Neurology";
 import Gynecology from './Gynecology';
 import Booking from './Booking';
 import login from "./assets/images/login1.png";
+import ProtectedRoute from "./ProtectedRoute";
+import { AuthProvider, useAuth } from "./AuthProvider";
 
 export default function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <BrowserRouter>
         <Routes>
+          {/* main Route */}
+          <Route path="/login" element={<Login />} />
+
+          {/* potected Route */}
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/"
             element={
@@ -116,11 +124,15 @@ export default function App() {
           <Route path="/department/:id" element={<Medic />} />
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/doctors/:id" element={<Booking />} />
-           <Route path="/cardiology" element={<Cardiology />} />
-            <Route path="/neurology" element={<Neurology />} />
-             <Route path="/gynecology" element={<Gynecology />} />
+          <Route path="/cardiology" element={<Cardiology />} />
+          <Route path="/neurology" element={<Neurology />} />
+          <Route path="/gynecology" element={<Gynecology />} />
+          </Route>
+
+          {/* <Route path="*" element={<Navigate to="/Login" replace />} /> */}
         </Routes>
       </BrowserRouter>
+      </AuthProvider>
     </div>
 
   );
