@@ -14,6 +14,7 @@
   flex-direction: row;
   align-items: center;
   margin-right:70px;
+  margin-left: 20px; /* Add left margin for spacing */
   
 }
 
@@ -45,9 +46,9 @@
 .sbox2{
   font-size: 30px;
   font-family: 'Times New Roman', Times, serif;
-  color:rgb(3, 84, 119);
-  margin-left:20px;
-  margin-top:8px;
+  color: rgb(3, 84, 119);
+  margin-left: 20px;
+  margin-top: 8px;
 }
 
 .btn-nav{
@@ -201,4 +202,197 @@ a{
 }
 a:hover{
   color:rgb(61, 3, 116)
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  z-index: 100;
+  padding-left: 20px;
+}
+.hamburger span {
+  height: 4px;
+  width: 30px;
+  background: #035477;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+  display: block;
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .box1 {
+    margin-right: 0;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    margin-left: 20px; /* Keep left margin in responsive */
+  }
+  .box2 {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    font-size: 20px;
+    width: 100%;
+  }
+  .nav-list li {
+    padding: 8px 0;
+    width: 100%;
+    text-align: left;
+  }
+  .btn-nav {
+  width: 100%;
+  max-width: 280px;
+  margin: 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  height: 48px;
+  background: #00bcd4;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.btn-nav:hover {
+  background: #0097a7;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-nav:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 188, 212, 0.25);
+}
+
+/* optional icon circle */
+.btn-nav span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  color: #00bcd4;
+  border-radius: 50%;
+  font-size: 16px;
+  box-shadow: 0 1px 4px rgba(0, 188, 212, 0.25);
+}
+
+.btn-nav i {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%2300bcd4" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>') no-repeat center center;
+  background-size: 14px 14px;
+}
+
+  .sbox2 {
+    font-size: 22px;
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-list {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100vw;
+    background: rgb(229, 247, 250);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    font-size: 20px;
+    padding: 20px 0 10px 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    display: none;
+    z-index: 99;
+  }
+  .nav-list.show {
+    display: flex;
+  }
+  .nav-list li {
+    width: 100%;
+    padding: 12px 0;
+    text-align: left;
+  }
+  .box2 {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 0;
+  }
+  .btn-nav {
+    width: 100%;
+    font-size: 22px;
+    margin-top: 10px;
+    height: 45px;
+    padding-left: 20px;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 6px 0;
+  }
+  .box1 {
+    height: 40px;
+    width: 100%;
+    margin-left: 12px; /* Slightly less margin for very small screens */
+  }
+  .sbox1 {
+    height: 35px;
+    width: 35px;
+  }
+  .sbox2 {
+    font-size: 16px;
+    margin-left: 12px;
+    margin-top: 2px;
+  }
+  .btn-nav {
+    font-size: 16px;
+    height: 36px;
+    padding-left: 10px;
+  }
+  .nav-list {
+    font-size: 16px;
+  }
 }
