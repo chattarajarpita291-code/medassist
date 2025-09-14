@@ -27,31 +27,37 @@ function FeedbackForm() {
   };
 
   return (
-    <div className="Feedback">
-      <h2>Feedback Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div >
-          <label className="name">Name:</label>
-          <input className="nm" type="text" name="name" value={formData.name} onChange={handleChange} required />
-        </div>
-
-        <div >
-          <label className="phone">Phone Number:</label>
-          <input className="ph" type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
-        </div>
-
-        <div >
-          <label className="mail">Email:</label>
-          <input className="email" type="email" name="email" value={formData.email} onChange={handleChange} required />
-        </div>
-
-        <div className="desrip">
-          <label>Description:</label>
-          <textarea name="description" value={formData.description} onChange={handleChange} required />
-        </div>
-
-        <button className="feed-btn" type="submit">Send Feedback</button>
-      </form>
+        <div className="feedback-contact-container">
+      <div className="Feedback">
+        <h2>Feedback Form</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label className="name">Name:</label>
+            <input className="nm" type="text" name="name" value={formData.name} onChange={handleChange} required />
+          </div>
+          <div>
+            <label className="phone">Phone Number:</label>
+            <input className="ph" type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+          </div>
+          <div>
+            <label className="mail">Email:</label>
+            <input className="email" type="email" name="email" value={formData.email} onChange={handleChange} required />
+          </div>
+          <div className="desrip">
+            <label>Description:</label>
+            <textarea name="description" value={formData.description} onChange={handleChange} required />
+          </div>
+          <button className="feed-btn" type="submit">Send Feedback</button>
+        </form>
+      </div>
+      <div className="contact-info">
+        <h2>Contact</h2>
+        <p>mediasist123@gmail.com<br/>(908) 686-1200</p>
+        <b>Westfield</b>
+        <p>233 North Avenue E Westfield, NJ 07090</p>
+        <b>Short Hills Office</b>
+        <p>549 Millburn Ave. Short Hills, NJ 0708</p>
+      </div>
     </div>
   );
 }

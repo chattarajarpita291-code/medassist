@@ -103,23 +103,12 @@ export default function App() {
                 <div className="box4">CONTACT US</div>
                 <div className="feed">
                   <FeedbackForm />
-                  <div className="contact">
-                    <div className="box5">Email</div>
-                    <div className="box6">mediassist123@gmail.com</div>
-                    <div className="box7">(908) 686-1200</div>
-                    <div className="box8">
-                      <b>Westfield</b>
-                    </div>
-                    <div className="box9">
-                      233 North Avenue E Westfield , N1 07090
-                    </div>
-                    <div className="box10">Short Hills Office</div>
-                    <div className="box11">
-                      549 Millburn Ave. Short Hills, NJ 0708
-                    </div>
+                  
+                    
+                    
                   </div>
                 </div>
-              </div>
+              
             }
           />
           <Route path="/service" element={<Service />} />
