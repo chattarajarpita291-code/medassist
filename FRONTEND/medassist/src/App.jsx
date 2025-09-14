@@ -17,20 +17,24 @@ import Booking from './Booking';
 import login from "./assets/images/login1.png";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider, useAuth } from "./AuthProvider";
+import { useNavigate,Navigate } from "react-router-dom";
 
 export default function App() {
+
   return (
     <div className="App">
       <AuthProvider>
       <BrowserRouter>
         <Routes>
+          {/* root routes */}
+          <Route path="/" element={<Navigate to="/login" replace />} />
           {/* main Route */}
           <Route path="/login" element={<Login />} />
 
           {/* potected Route */}
           <Route element={<ProtectedRoute />}>
           <Route
-            path="/"
+            path="/home"
             element={
               <div>
                 {/* Top Section */}
@@ -38,9 +42,10 @@ export default function App() {
                   <h2 className="official">
                     WELCOME TO THE OFFICIAL PAGE OF MediAssist+
                   </h2>
-                  <Link to="/login" className="log">
-                    <img src={login} id="login-png"></img>
-                  </Link>
+                  
+                  
+                  
+                  
                 </div>
 
                 {/* Navbar */}
@@ -118,7 +123,6 @@ export default function App() {
             }
           />
           <Route path="/service" element={<Service />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/department" element={<Department />} />
           <Route path="/department/:id" element={<Medic />} />

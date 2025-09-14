@@ -4,12 +4,19 @@ import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
 
 
-
+dotenv.config();
 const app =express();
+
+// Middleware
 app.use(express.json());
-app.use(cors());
+app.use(express.urlencoded({ extended: true })); // parse form submissions
+app.use(cors({
+  origin: "http://localhost:5173", // your React app URL (change if different)
+  credentials: true                 // allow cookies and auth headers
+}));
 app.use(cookieParser());
 
 
@@ -54,6 +61,52 @@ app.post('/register',(req,res) =>{
 
 })
 })
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  console.log("Login attempt:", { email, password });
+  const sql = "SELECT * FROM login WHERE email = ?";
+  
+  db.get(sql, [email], (err, row) => {
+    if (err) {
+    console.error("DB error:", err);
+      return res.json({ Error: "Database error" });
+    }
+     console.log("DB row result:", row);
+    if (!row) {
+      return res.json({ Error: "User not found" });
+    }
+
+    // Compare hashed password
+    bcrypt.compare(password, row.password, (err, result) => {
+      if (err) {
+        console.error("Bcrypt error:", err);
+        return res.json({ Error: "Error comparing passwords" });
+      }
+      if (!result) {
+
+        return res.json({ Error: "Invalid credentials" });
+      }
+      
+      
+      const SECRET = process.env.JWT_SECRET
+      // If password matches, generate token
+      const token = jwt.sign(
+        { id: row.id, name: row.name, email: row.email },
+        SECRET, // 🔐 Use env var in production
+        { expiresIn: "1h" }
+      );
+
+      // Send token in cookie
+      res.cookie("token", token, {
+        httpOnly: true,
+        maxAge: 3600000,
+      });
+
+      return res.json({ Status: "Success", token });
+    });
+  });
+});
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");

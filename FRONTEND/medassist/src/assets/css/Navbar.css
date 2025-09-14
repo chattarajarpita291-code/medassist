@@ -24,7 +24,7 @@
    background-color: rgb(87, 87, 87);
 }
 .box2{
-  width:550px;
+  width: 560px;
   padding:1px;
   display: flex;
   flex-direction: row;
@@ -34,8 +34,8 @@
    padding: 0;
   margin: 0;
   display: flex;
-  gap: 10px; 
-  font-size: 22px;
+  gap: 15px; 
+  font-size: 20px;
    font-family: 'Times New Roman', Times, serif;
 }
 .nav-list li{
@@ -201,4 +201,70 @@ a{
 }
 a:hover{
   color:rgb(61, 3, 116)
+}
+
+#login-png {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  padding: 5px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px #d1d1d1,
+              -5px -5px 10px #ffffff;
+  position: absolute;
+  right: 10px;
+  top: 50px;
+}
+
+#login-png:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  box-shadow: 7px 7px 14px #889cec,
+              -7px -7px 14px #e49f9f;
+}
+
+/* Add this if you want a cool active/click effect */
+#login-png:active {
+  transform: scale(0.95);
+  box-shadow: inset 5px 5px 10px #d1d1d1,
+              inset -5px -5px 10px #ffffff;
+}
+
+/* If you're wrapping the image in a container, add this */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Optional: Add a tooltip on hover */
+.login-container::after {
+  content: 'Login/Logout';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.login-container:hover::after {
+  opacity: 1;
+}
+#icon-logout {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+  position: relative;
+  top: 2px;
+  
 }

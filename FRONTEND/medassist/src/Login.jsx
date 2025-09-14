@@ -1,17 +1,15 @@
+// 
 import React, { useState } from "react";
-import "../src/assets/css/Login.css"; // ⭐ make sure path is correct
-import { Link } from "react-router-dom";
-import axios from "axios"; // Import axios if you plan to make API calls
-import { PiEyeDuotone } from "react-icons/pi";
-import { PiEyeSlashDuotone } from "react-icons/pi";
+import "../src/assets/css/Login.css";
+import axios from "axios";
 import { VscEye } from "react-icons/vsc";
 import { TbEyeClosed } from "react-icons/tb";
-
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "./AuthProvider"; // ✅ import AuthProvider hook
 
 const Auth = () => {
   const [isRegister, setIsRegister] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
 
   // ✅ State for Login
   const [loginValues, setLoginValues] = useState({
@@ -26,6 +24,10 @@ const Auth = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { signIn } = useAuth(); // ✅ use signIn from AuthProvider
+
   // ✅ Handle input change for Login
   const handleLoginChange = (e) => {
     setLoginValues({ ...loginValues, [e.target.name]: e.target.value });
@@ -33,60 +35,55 @@ const Auth = () => {
 
   // ✅ Handle input change for Register
   const handleRegisterChange = (e) => {
-    e.preventDefault();
-    setRegisterValues({ ...registerValues, [e.target.name]: e.target.value })
+    setRegisterValues({ ...registerValues, [e.target.name]: e.target.value });
   };
 
-  // ✅ Submit handlers
+  // ✅ Submit handler for Login
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    console.log("Login Submitted:", loginValues);
-    axios.post('http://localhost:3000/login', {
-  email: loginValues.username, // assuming you typed email here
-  password: loginValues.password
-})
-.then(response => {
-  if (response.data.Status === "Success") {
-    alert("Login successful!");
-    // 👉 Optionally store token or redirect
-    window.location.href = "/"; // redirect to home
-  } else {
-    alert(response.data.Error);
-  }
-})
-.catch(error => {
-  console.error("Login error:", error);
-  alert("Login failed. Check console.");
-});
+    axios
+      .post("http://localhost:3000/login", loginValues)
+      .then((response) => {
+        if (response.data.Status === "Success") {
+          // ✅ Save user data in context + localStorage
+          signIn({
+            email: loginValues.email,
+            token: response.data.token || "dummy-token",
+          });
 
+          
+
+          // ✅ Redirect to original path or /home
+          const redirectTo = location.state?.from?.pathname || "/home";
+          navigate(redirectTo, { replace: true });
+        } else {
+          alert(response.data.Error);
+        }
+      })
+      .catch((error) => {
+        console.error("Login error:", error);
+        alert("Login failed. Check console.");
+      });
   };
 
+  // ✅ Submit handler for Register
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
-    console.log("Register Submitted:", registerValues);
-    // 👉 API call or logic here
-    axios.post('http://localhost:3000/register', registerValues)
-    .then(response => {
-      console.log("Registration successful:", response.data);
-    })
-    .catch(error =>{
-      console.error("Error during registration:", error);
-    })
+    axios
+      .post("http://localhost:3000/register", registerValues)
+      .then((response) => {
+        alert("Registration successful! You can now log in.");
+        setIsRegister(false); // Switch back to login form
+      })
+      .catch((error) => {
+        console.error("Error during registration:", error);
+        alert("Registration failed. Check console.");
+      });
   };
-function togglePasswordVisibility() {
-  const open = document.getElementById("eye_open");
-  if (open){
-    open.classList.toggle(<PiEyeSlashDuotone />);
-  }
-}
 
   return (
     <div className="wrapper">
       <div className={`auth-container ${isRegister ? "register-mode" : ""}`}>
-        
-
-
-
         {/* Forms Section */}
         <div className="forms-container">
           {/* Login Form */}
@@ -98,7 +95,7 @@ function togglePasswordVisibility() {
                   type="text"
                   name="email"
                   placeholder="Email"
-                  value={loginValues.username}
+                  value={loginValues.email}
                   onChange={handleLoginChange}
                   required
                 />
@@ -115,7 +112,9 @@ function togglePasswordVisibility() {
                 />
                 <i className="fa fa-lock"></i>
               </div>
-              <button type="submit" className="Button">Login</button>
+              <button type="submit" className="Button">
+                Login
+              </button>
             </form>
           )}
 
@@ -138,7 +137,6 @@ function togglePasswordVisibility() {
                 <input
                   type="email"
                   name="email"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   placeholder="Email"
                   value={registerValues.email}
                   onChange={handleRegisterChange}
@@ -156,40 +154,28 @@ function togglePasswordVisibility() {
                   required
                 />
                 {showPassword ? (
-    <VscEye
-      id="eye_icon"
-      
-      onClick={() => setShowPassword(false)}   // 👈 hide password
-    />
-  ) : (
-    <TbEyeClosed
-      id="eye_icon"
-      
-      onClick={() => setShowPassword(true)}    // 👈 show password
-    />
-  )}
-               
+                  <VscEye onClick={() => setShowPassword(false)} />
+                ) : (
+                  <TbEyeClosed onClick={() => setShowPassword(true)} />
+                )}
               </div>
-              <button type="submit" className="Button">Register</button>
+              <button type="submit" className="Button">
+                Register
+              </button>
             </form>
           )}
-
         </div>
 
         {/* Overlay Section */}
         <div className="overlay-container">
-          {/* Left Side (Register Welcome) */}
           <div className="overlay-panel overlay-left">
             <h2>Hello, Welcome!</h2>
             <p>Don’t have an account? Register now and join us.</p>
-            <div className="button-wrapper">
-              <button className="Button" onClick={() => setIsRegister(true)}>
-                Register
-              </button>
-            </div>
+            <button className="Button" onClick={() => setIsRegister(true)}>
+              Register
+            </button>
           </div>
 
-          {/* Right Side (Login Welcome) */}
           <div className="overlay-panel overlay-right">
             <h2>Welcome Back!</h2>
             <p>Already have an account? Login with your details.</p>
@@ -204,3 +190,4 @@ function togglePasswordVisibility() {
 };
 
 export default Auth;
+
