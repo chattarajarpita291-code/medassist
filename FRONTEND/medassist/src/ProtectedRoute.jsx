@@ -11,6 +11,11 @@ Usage (in Routes):
 
 This will redirect unauthenticated users to /login and preserve the attempted location.
 */
+// check if bypass is enabled (via env var or localStorage)
+
+
+
+
 export default function ProtectedRoute() {
   const { user } = useAuth();
   const location = useLocation();
