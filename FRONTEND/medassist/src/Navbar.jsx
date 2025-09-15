@@ -36,17 +36,16 @@ import { useAuth } from './AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { IoMdLogOut } from "react-icons/io";
 
-const Navbar = () => {
-      const {signOut} = useAuth();
-   const nav =useNavigate();
-   const handleLogout = () => {
-    signOut();              // ✅ clear user + localStorage
-    navigate("/login");     // ✅ redirect to login page
-  };
+
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const {signOut} = useAuth();
+   const nav =useNavigate();
+   const handleLogout = () => {
+    signOut();              // ✅ clear user + localStorage
+    nav("/login");
+   }
     return (
         <div className='navbar'>
             <div className="box1">
@@ -79,5 +78,4 @@ const Navbar = () => {
         </div>
     );
 };
-
 export default Navbar;
