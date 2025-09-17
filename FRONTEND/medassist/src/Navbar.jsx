@@ -35,6 +35,7 @@ import bgimage from './assets/images/ChatGPT_Image_Jul_31__2025__03_56_15_PM-rem
 import { useAuth } from './AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { IoMdLogOut } from "react-icons/io";
+import Chatbot from './Chatbot';
 
 
 
@@ -73,8 +74,9 @@ const Navbar = () => {
                         <button id="login-png" onClick={handleLogout} ><IoMdLogOut id='icon-logout' /></button>
                     </li>
                 </ul>
+                
             </div>
-            <a href="#" className="btn-nav">MediBot<span><i></i></span></a>
+            <a href="#" className="btn-nav"><button id="btn-bot" >MediBot</button><span><i></i></span></a>
         </div>
     );
 };
