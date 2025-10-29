@@ -18,6 +18,7 @@ import login from "./assets/images/login1.png";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider, useAuth } from "./AuthProvider";
 import { useNavigate,Navigate } from "react-router-dom";
+import Chatbot from "./Chatbot";
 
 export default function App() {
 
@@ -27,7 +28,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           {/* root routes */}
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/" element={<Navigate to="/home" replace />} />
           {/* main Route */}
           <Route path="/login" element={<Login />} />
 
@@ -50,7 +51,7 @@ export default function App() {
 
                 {/* Navbar */}
                 <Navbar />
-
+                
                 {/* Hero Section */}
                 <div className="hero-sec">
                   <div className="hero-text">
@@ -62,6 +63,7 @@ export default function App() {
                   </div>
                   <img src={doctor} alt="doctor" className="hero-img" />
                 </div>
+                <Chatbot />
 
                 {/* Service Cards */}
                 <div className="card-cont">
