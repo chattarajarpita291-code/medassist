@@ -91,15 +91,24 @@ body {
   gap: 30px; /* Space between cards */
   padding: 40px 20px;
   background-color: rgb(233, 245, 248);
+  height: 400px;
+  
 }
 .card1, .card2, .card3 {
-  flex: 1; /* Allows the cards to grow and occupy space */
+  flex: 10; /* Allows the cards to grow and occupy space */
   max-width: 350px; /* Optional */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
   padding: 20px;
   text-align: center;
   background: linear-gradient(to bottom, #033649, #6db3f2);
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  
 }
 
 .card1 { background: linear-gradient(to bottom, rgb(0, 62, 87), skyblue); }
@@ -200,4 +209,93 @@ body {
   width: 80px;
   height: 30px;
   margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .hero-sec {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px;
+  }
+  .card-cont {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 20px;
+    padding: 30px 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-cont {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+    padding: 30px 5px;
+  }
+  .card1, .card2, .card3 {
+    max-width: 95vw;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .hero-text, .hero-img {
+    max-width: 95vw;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .top1 {
+    flex-direction: column;
+    padding: 10px 5px;
+    font-size: 16px;
+  }
+  .official {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .log {
+    position: static;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .hero-sec {
+    padding: 18px 2px;
+  }
+  .stext1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .stext2 {
+    font-size: 15px;
+  }
+  .card-cont {
+    padding: 15px 2px;
+    gap: 12px;
+  }
+  .card1, .card2, .card3 {
+    padding: 12px;
+    font-size: 15px;
+  }
+  .cardio1, .neuro1, .gyno1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .box4 {
+    font-size: 18px;
+    padding: 8px;
+  }
+  .feed {
+    padding: 10px 2px;
+    gap: 12px;
+  }
+  .contact {
+    max-width: 95vw;
+    font-size: 14px;
+  }
+  .box5 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
 }
