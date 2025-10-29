@@ -1,0 +1,424 @@
+{
+  "conditions": [
+    {
+      "name": "Common Cold",
+      "symptoms": ["runny nose", "sore throat", "sneezing", "mild fever", "cough"],
+      "advice": [
+        "Drink warm fluids",
+        "Get adequate rest",
+        "Use saline nasal drops if needed"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Paracetamol",
+          "dosage_range": "500–650mg every 6–8 hrs (max 4g/day)",
+          "contraindications": ["liver disease", "alcohol abuse"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Cetirizine",
+          "dosage_range": "5–10mg once daily",
+          "contraindications": ["severe kidney disease"],
+          "requires_clinician": false
+        }
+      ]
+    },
+    {
+      "name": "Fever",
+      "symptoms": ["temperature above 100.4°F", "chills", "body aches"],
+      "advice": [
+        "Stay hydrated",
+        "Monitor temperature every 6 hours",
+        "Seek doctor if fever > 102°F or lasts more than 3 days"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Paracetamol",
+          "dosage_range": "500–650mg every 6–8 hrs (max 4g/day)",
+          "contraindications": ["liver disease", "alcohol abuse"],
+          "requires_clinician": false
+        }
+      ]
+    },
+    {
+      "name": "Headache (Tension)",
+      "symptoms": ["dull ache", "pressure around forehead", "stress-related"],
+      "advice": [
+        "Relax in a quiet, dark room",
+        "Apply warm compress",
+        "Practice stress-relief breathing"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Ibuprofen",
+          "dosage_range": "200–400mg every 6–8 hrs (max 1200mg/day OTC)",
+          "contraindications": ["stomach ulcers", "kidney disease", "asthma"],
+          "requires_clinician": false
+        }
+      ]
+    },
+    {
+      "name": "Migraine",
+      "symptoms": ["throbbing headache", "sensitivity to light", "nausea"],
+      "advice": [
+        "Lie down in a dark, quiet room",
+        "Use cold compress on forehead",
+        "Avoid known triggers like caffeine"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Sumatriptan",
+          "dosage_range": "25–100mg once (max 200mg/day)",
+          "contraindications": ["heart disease", "stroke history"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Hypertension (High BP)",
+      "symptoms": ["headache", "dizziness", "blurred vision"],
+      "advice": [
+        "Reduce salt intake",
+        "Avoid alcohol and smoking",
+        "Monitor BP regularly"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Amlodipine",
+          "dosage_range": "2.5–10mg once daily",
+          "contraindications": ["severe liver impairment", "allergy to amlodipine"],
+          "requires_clinician": true
+        },
+        {
+          "name": "Losartan",
+          "dosage_range": "25–100mg once daily",
+          "contraindications": ["pregnancy", "severe kidney impairment"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Diabetes (Type 2, stable)",
+      "symptoms": ["frequent urination", "excessive thirst", "fatigue"],
+      "advice": [
+        "Follow a low-sugar, high-fiber diet",
+        "Regular exercise (30 min/day)",
+        "Monitor blood glucose daily"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Metformin",
+          "dosage_range": "500–2000mg/day in divided doses",
+          "contraindications": ["kidney disease", "liver problems", "heart failure"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Asthma (Mild)",
+      "symptoms": ["wheezing", "shortness of breath", "coughing"],
+      "advice": [
+        "Avoid dust and smoke exposure",
+        "Do breathing exercises",
+        "Keep inhaler nearby"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Salbutamol Inhaler",
+          "dosage_range": "100–200 mcg every 4–6 hrs as needed",
+          "contraindications": ["heart disease", "hyperthyroidism"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Stomach Ulcer",
+      "symptoms": ["burning stomach pain", "bloating", "indigestion"],
+      "advice": [
+        "Avoid spicy and acidic foods",
+        "Eat smaller meals",
+        "Reduce stress"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Omeprazole",
+          "dosage_range": "20mg once daily before meals",
+          "contraindications": ["liver disease", "osteoporosis risk"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Diarrhea (Acute)",
+      "symptoms": ["loose stools", "abdominal cramps", "dehydration risk"],
+      "advice": [
+        "Drink Oral Rehydration Solution (ORS)",
+        "Avoid oily/spicy food",
+        "Rest well"
+      ],
+      "candidate_meds": [
+        {
+          "name": "ORS",
+          "dosage_range": "As directed, frequent sips",
+          "contraindications": [],
+          "requires_clinician": false
+        },
+        {
+          "name": "Loperamide",
+          "dosage_range": "2mg after each loose stool (max 16mg/day)",
+          "contraindications": ["children <12", "severe colitis"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Allergic Rhinitis",
+      "symptoms": ["sneezing", "runny nose", "itchy eyes", "nasal congestion"],
+      "advice": [
+        "Avoid dust, pollen, and animal dander",
+        "Use air purifier if possible",
+        "Shower after outdoor exposure"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Cetirizine",
+          "dosage_range": "5–10mg once daily",
+          "contraindications": ["severe kidney disease"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Nasal Steroid Spray (Fluticasone)",
+          "dosage_range": "1 spray per nostril once daily",
+          "contraindications": ["nose infections", "children under 12"],
+          "requires_clinician": true
+        }
+      ]
+    }
+  ],
+  "other_conditions": [
+    {
+      "name": "Acid Reflux (GERD)",
+      "symptoms": ["heartburn", "chest discomfort", "acid taste in mouth"],
+      "advice": [
+        "Avoid spicy and fatty foods",
+        "Eat smaller meals",
+        "Don’t lie down immediately after eating"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Antacids (OTC)",
+          "dosage_range": "As needed after meals",
+          "contraindications": ["kidney disease (some antacids)"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Omeprazole",
+          "dosage_range": "20mg once daily before breakfast",
+          "contraindications": ["liver disease"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Constipation",
+      "symptoms": ["infrequent stools", "straining during bowel movements", "hard stools"],
+      "advice": [
+        "Increase fiber intake",
+        "Drink plenty of water",
+        "Exercise regularly"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Psyllium Husk",
+          "dosage_range": "1–2 tsp in water daily",
+          "contraindications": ["esophageal narrowing"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Lactulose Syrup",
+          "dosage_range": "15–30ml once or twice daily",
+          "contraindications": ["galactosemia"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Urinary Tract Infection (UTI)",
+      "symptoms": ["burning urination", "frequent urge to urinate", "lower abdominal pain"],
+      "advice": [
+        "Drink plenty of fluids",
+        "Avoid caffeine and alcohol",
+        "Seek doctor if symptoms persist >2 days"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Cranberry Juice (supportive)",
+          "dosage_range": "1–2 glasses/day",
+          "contraindications": ["kidney stones"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Antibiotics (Ciprofloxacin, Nitrofurantoin)",
+          "dosage_range": "As prescribed by doctor",
+          "contraindications": ["pregnancy (ciprofloxacin)", "liver/kidney disease"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Sore Throat (Pharyngitis)",
+      "symptoms": ["throat pain", "difficulty swallowing", "red/swollen tonsils"],
+      "advice": [
+        "Gargle with warm salt water",
+        "Drink warm tea with honey",
+        "Avoid cold drinks"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Lozenges",
+          "dosage_range": "As needed, max 8–10/day",
+          "contraindications": ["diabetes (sugar lozenges)"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Amoxicillin (if bacterial)",
+          "dosage_range": "500mg every 8 hrs for 7 days",
+          "contraindications": ["penicillin allergy"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Bronchitis (Acute)",
+      "symptoms": ["cough with phlegm", "chest tightness", "fatigue"],
+      "advice": [
+        "Stay hydrated",
+        "Rest and avoid smoking",
+        "Use steam inhalation"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Cough Syrup (OTC)",
+          "dosage_range": "As directed on label",
+          "contraindications": ["children under 6"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Antibiotics (if bacterial)",
+          "dosage_range": "As prescribed",
+          "contraindications": ["allergies"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Anemia (Iron Deficiency)",
+      "symptoms": ["fatigue", "pale skin", "shortness of breath"],
+      "advice": [
+        "Eat iron-rich foods (spinach, red meat, beans)",
+        "Take vitamin C with meals",
+        "Avoid excess tea/coffee"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Iron Supplements",
+          "dosage_range": "50–100mg elemental iron daily",
+          "contraindications": ["hemochromatosis"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Seasonal Flu (Influenza)",
+      "symptoms": ["fever", "chills", "body aches", "cough", "sore throat"],
+      "advice": [
+        "Stay in bed and rest",
+        "Stay hydrated",
+        "Cover mouth when coughing"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Paracetamol",
+          "dosage_range": "500–650mg every 6–8 hrs",
+          "contraindications": ["liver disease"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Oseltamivir (Tamiflu)",
+          "dosage_range": "75mg twice daily for 5 days",
+          "contraindications": ["allergy to oseltamivir"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Skin Allergy (Rash, Itching)",
+      "symptoms": ["red rash", "itchiness", "skin irritation"],
+      "advice": [
+        "Avoid scratching",
+        "Use soothing lotions (calamine)",
+        "Avoid allergen exposure"
+      ],
+      "candidate_meds": [
+        {
+          "name": "Cetirizine",
+          "dosage_range": "5–10mg once daily",
+          "contraindications": ["severe kidney disease"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Hydrocortisone Cream (topical steroid)",
+          "dosage_range": "Apply thin layer twice daily",
+          "contraindications": ["open wounds", "skin infection"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Gout",
+      "symptoms": ["joint pain", "swelling", "redness (especially in big toe)"],
+      "advice": [
+        "Avoid red meat and alcohol",
+        "Stay hydrated",
+        "Elevate affected joint"
+      ],
+      "candidate_meds": [
+        {
+          "name": "NSAIDs (Ibuprofen)",
+          "dosage_range": "200–400mg every 6–8 hrs",
+          "contraindications": ["stomach ulcers", "kidney disease"],
+          "requires_clinician": false
+        },
+        {
+          "name": "Allopurinol (chronic gout)",
+          "dosage_range": "100–300mg daily",
+          "contraindications": ["kidney disease"],
+          "requires_clinician": true
+        }
+      ]
+    },
+    {
+      "name": "Dehydration",
+      "symptoms": ["thirst", "dry mouth", "dizziness", "low urine output"],
+      "advice": [
+        "Drink Oral Rehydration Solution (ORS)",
+        "Avoid caffeine and alcohol",
+        "Seek hospital if severe"
+      ],
+      "candidate_meds": [
+        {
+          "name": "ORS",
+          "dosage_range": "Frequent small sips until hydration improves",
+          "contraindications": [],
+          "requires_clinician": false
+        },
+        {
+          "name": "IV Fluids",
+          "dosage_range": "As prescribed in hospital",
+          "contraindications": [],
+          "requires_clinician": true
+        }
+      ]
+    }
+  ]
+}

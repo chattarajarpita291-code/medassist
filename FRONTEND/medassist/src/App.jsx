@@ -32,7 +32,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
 
           {/* potected Route */}
-          {/* <Route element={<ProtectedRoute />}> */}
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/home"
             element={
@@ -120,7 +120,7 @@ export default function App() {
           <Route path="/cardiology" element={<Cardiology />} />
           <Route path="/neurology" element={<Neurology />} />
           <Route path="/gynecology" element={<Gynecology />} />
-          {/* </Route> */}
+          </Route>
 
           {/* <Route path="*" element={<Navigate to="/Login" replace />} /> */}
         </Routes>
